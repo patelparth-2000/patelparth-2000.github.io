@@ -32,10 +32,14 @@ git clone [https://github.com/patelparth-2000/patelparth-2000.github.io.git](htt
 ```
 
 2. Install NPM packages
+```sh
 npm install
+```
 
 3. Run the development server
+```sh
 npm start
+```
 
 ### Contact
 
