@@ -2,7 +2,7 @@
 
 👋 Hello there! Welcome to my personal portfolio. This is a place where I showcase my skills, projects, and a little bit about my journey as a developer.
 
-🔗 **Live Site URL:** [https://patelparth-2000.github.io](https://patelparth-2000.github.io)
+🔗 **Live Site URL:** [https://patelparth-2000.github.io/index.html](https://patelparth-2000.github.io/index.html)
 
 ### Built With
 
