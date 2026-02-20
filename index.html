@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Parth Patel | Mobile App Developer</title>
     <!-- Inter Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,135 +13,179 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            /* Subtle radial gradient for background depth */
-            background: radial-gradient(at top left, rgba(29, 78, 216, 0.1), transparent 50%),
-                        radial-gradient(at bottom right, rgba(203, 166, 248, 0.1), transparent 50%),
-                        #0a0a0a; /* Fallback dark background */
+            background: radial-gradient(at top left, rgba(29, 78, 216, 0.15), transparent 50%),
+                        radial-gradient(at bottom right, rgba(16, 185, 129, 0.1), transparent 50%),
+                        #0a0a0a;
         }
 
-        /* Mobile menu slide-down animation */
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1f2937;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #374151;
+        }
+
+        /* Mobile menu transition */
         #mobile-menu {
-            transition: max-height 0.3s ease-out, padding-top 0.3s ease-out, padding-bottom 0.3s ease-out;
+            transition: all 0.3s ease-in-out;
             max-height: 0;
+            opacity: 0;
             overflow: hidden;
-            padding-top: 0;
-            padding-bottom: 0;
         }
         #mobile-menu.open {
-            max-height: 500px; /* Adjust as needed, a large value works fine */
-            padding-top: 1rem;
-            padding-bottom: 1rem;
+            max-height: 450px;
+            opacity: 1;
+            padding: 1rem 0;
         }
 
         /* Fade-in on scroll animation */
         .fade-in-section {
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateY(30px);
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
         .fade-in-section.is-visible {
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Project Card Hover */
+        .project-card:hover .project-image {
+            transform: scale(1.05);
+        }
     </style>
     <!-- Lucide Icons CDN -->
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="bg-gray-950 text-gray-100">
+<body class="bg-gray-950 text-gray-100 selection:bg-cyan-500/30">
 
     <!-- Header & Navigation -->
-    <header class="sticky top-0 bg-gray-900 bg-opacity-90 backdrop-blur-sm z-50 shadow-lg">
+    <header class="sticky top-0 bg-gray-950/80 backdrop-blur-md z-50 border-b border-gray-800">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             <a href="#hero" class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-500">
                 Parth Patel
             </a>
-            <div class="hidden md:flex space-x-6">
-                <a href="#about" class="text-gray-300 hover:text-cyan-400 transition-colors duration-300">About</a>
-                <a href="#experience" class="text-gray-300 hover:text-cyan-400 transition-colors duration-300">Experience</a>
-                <a href="#projects" class="text-gray-300 hover:text-cyan-400 transition-colors duration-300">Projects</a>
-                <a href="#skills" class="text-gray-300 hover:text-cyan-400 transition-colors duration-300">Skills</a>
-                <a href="#contact" class="text-gray-300 hover:text-cyan-400 transition-colors duration-300">Contact</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="text-sm font-medium text-gray-300 hover:text-cyan-400 transition-colors">About</a>
+                <a href="#experience" class="text-sm font-medium text-gray-300 hover:text-cyan-400 transition-colors">Experience</a>
+                <a href="#projects" class="text-sm font-medium text-gray-300 hover:text-cyan-400 transition-colors">Projects</a>
+                <a href="#skills" class="text-sm font-medium text-gray-300 hover:text-cyan-400 transition-colors">Skills</a>
+                <a href="#contact" class="text-sm font-medium text-gray-300 hover:text-cyan-400 transition-colors">Contact</a>
             </div>
             <button id="mobile-menu-button" class="md:hidden text-gray-300 hover:text-cyan-400 focus:outline-none">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+                <i data-lucide="menu"></i>
             </button>
         </nav>
-        <div id="mobile-menu" class="md:hidden bg-gray-800">
-            <a href="#about" class="block py-2 px-4 text-center text-gray-300 hover:bg-gray-700 transition-colors duration-300">About</a>
-            <a href="#experience" class="block py-2 px-4 text-center text-gray-300 hover:bg-gray-700 transition-colors duration-300">Experience</a>
-            <a href="#projects" class="block py-2 px-4 text-center text-gray-300 hover:bg-gray-700 transition-colors duration-300">Projects</a>
-            <a href="#skills" class="block py-2 px-4 text-center text-gray-300 hover:bg-gray-700 transition-colors duration-300">Skills</a>
-            <a href="#contact" class="block py-2 px-4 text-center text-gray-300 hover:bg-gray-700 transition-colors duration-300">Contact</a>
+        <div id="mobile-menu" class="md:hidden bg-gray-900 border-b border-gray-800">
+            <div class="flex flex-col space-y-4 px-6 pb-4">
+                <a href="#about" class="text-gray-300 hover:text-cyan-400 py-2">About</a>
+                <a href="#experience" class="text-gray-300 hover:text-cyan-400 py-2">Experience</a>
+                <a href="#projects" class="text-gray-300 hover:text-cyan-400 py-2">Projects</a>
+                <a href="#skills" class="text-gray-300 hover:text-cyan-400 py-2">Skills</a>
+                <a href="#contact" class="text-gray-300 hover:text-cyan-400 py-2">Contact</a>
+            </div>
         </div>
     </header>
 
     <main class="container mx-auto px-4 sm:px-6 lg:px-8">
-
         <!-- Hero Section -->
-        <section id="hero" class="min-h-screen flex flex-col justify-center items-center text-center py-24 fade-in-section">
-            <img class="w-48 h-48 rounded-full mb-6 ring-4 ring-offset-4 ring-cyan-500 ring-offset-gray-950" src="https://wsrv.nl/?url=https://github.com/patelparth-2000/patelparth-2000.github.io/blob/main/Parth_Patel.jpeg?raw=true&w=400&h=400&fit=cover&a=attention" alt="Placeholder Profile Image" onerror="this.onerror=null;this.src='https://media.licdn.com/dms/image/v2/D4D03AQFKsMUtOpmg_w/profile-displayphoto-crop_800_800/B4DZl4CdkrJQAI-/0/1758655536122?e=1761782400&v=beta&t=r7YmpR_U5QfRFOQHKsNetJVGujCgU-R-F_fqxqo6ueA';">
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-500 animate-pulse">
-                Hello, I'm Parth Patel
+        <section id="hero" class="min-h-[90vh] flex flex-col justify-center items-center text-center py-24 fade-in-section">
+            <div class="relative mb-8 group">
+                <div class="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-emerald-500 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                <img class="relative w-48 h-48 rounded-full ring-4 ring-offset-4 ring-cyan-500 ring-offset-gray-950 object-cover shadow-2xl" 
+                     src="https://wsrv.nl/?url=https://github.com/patelparth-2000/patelparth-2000.github.io/blob/main/Parth_Patel.jpeg?raw=true&w=400&h=400&fit=cover&a=attention" 
+                     alt="Parth Patel">
+            </div>
+            <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-500">
+                Hi, I'm Parth Patel
             </h1>
-            <p class="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto mb-8">
-                A passionate Mobile application developer specializing in creating Smooth and functional Mobile applications.
+            <p class="text-xl sm:text-2xl text-gray-400 max-w-2xl mx-auto mb-10">
+                Transforming ideas into <span class="text-white">high-performance mobile applications</span> with Flutter and Android development.
             </p>
-            <a href="#projects" class="inline-block px-8 py-3 text-lg font-medium text-white bg-gradient-to-r from-cyan-500 to-emerald-600 rounded-full shadow-lg hover:from-cyan-600 hover:to-emerald-700 transform hover:scale-105 transition-all duration-300">
-                View My Work
-            </a>
+            <div class="flex space-x-4">
+                <a href="#projects" class="px-8 py-3 text-lg font-semibold text-white bg-gradient-to-r from-cyan-600 to-emerald-600 rounded-full shadow-lg hover:shadow-cyan-500/40 transform hover:-translate-y-1 transition-all duration-300">
+                    View My Work
+                </a>
+                <a href="#contact" class="px-8 py-3 text-lg font-semibold text-gray-300 border border-gray-700 rounded-full hover:bg-gray-800 transition-all duration-300">
+                    Get In Touch
+                </a>
+            </div>
         </section>
 
         <!-- About Section -->
-        <section id="about" class="py-20 md:py-24 fade-in-section">
-            <div class="grid md:grid-cols-1 gap-12 items-center">
-                <div class="space-y-4">
-                    <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">About Me</h2>
-                    <p class="text-gray-300 leading-relaxed">
-                        Hi, I'm Parth Patel, a passionate and dedicated Mobile application Developer with a strong focus on creating impactful and user-centered solutions. I thrive on turning complex problems into intuitive, accessible, and beautiful experiences.
-                    </p>
-                    <p class="text-gray-300 leading-relaxed">
-                        I'm currently pursuing a Master of Science in Information Technology at the University of the West of Scotland, London campus. This program is enhancing my technical foundation and deepening my knowledge in areas such as software development, data management, and emerging technologies.
-                    </p>
-                    <p class="text-gray-300 leading-relaxed">
-                        I have over two years of hands-on experience as a Mobile Application Developer, specializing in designing and developing innovative mobile applications using Flutter and Android (Java). My experience includes integrating RESTful APIs, deploying apps to the Google Play Store, managing updates, and delivering full-cycle mobile solutions. I've also led development projects and mentored junior developers, ensuring high-quality, scalable, and user-focused app functionality.
-                    </p>
-                    <p class="text-gray-300 leading-relaxed">
-                        Outside of my academic and professional work, I have a passion for strategic and creative activities. I'm particularly skilled at chess, which has sharpened my analytical and decision-making abilities. I also enjoy watching animations and movies, playing cricket, listening to music, and exploring video games. These hobbies keep me balanced, inspired, and continuously curious.
-                    </p>
-                    <p class="text-gray-300 leading-relaxed">
-                        Let's build something great together.
-                    </p>
+        <section id="about" class="py-24 fade-in-section">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-8 border-l-4 border-cyan-500 pl-6">About Me</h2>
+                <div class="grid md:grid-cols-3 gap-8 items-start">
+                    <div class="md:col-span-2 space-y-6 text-gray-300 text-lg leading-relaxed">
+                        <p>
+                            I am a dedicated <span class="text-white">Mobile Application Developer</span> specializing in <span class="text-cyan-400">Flutter</span> and <span class="text-emerald-400">Android</span>. Currently, I am pursuing my <span class="text-white">Master of Science in IT</span> at the University of the West of Scotland, <span class="text-white">London Campus</span>.
+                        </p>
+                        <p>
+                            I focus on turning complex technical requirements into intuitive, user-centered mobile solutions. With experience across the full app development lifecycle, I enjoy architecting robust systems and mentoring others in the field.
+                        </p>
+                        <p>
+                            When I'm not coding, I'm a strategic thinker who enjoys <span class="text-white">Chess</span>, playing cricket, and staying updated with the latest in technology and animation.
+                        </p>
+                        <p>
+                            Let's build something great together.
+                        </p>
+                    </div>
+                    <div class="bg-gray-900 p-6 rounded-2xl border border-gray-800 shadow-xl">
+                        <h3 class="text-white font-bold mb-4">Quick Info</h3>
+                        <ul class="space-y-4 text-sm">
+                            <li class="flex justify-between border-b border-gray-800 pb-2">
+                                <span class="text-gray-500">Location:</span>
+                                <span class="text-gray-300">London, UK</span>
+                            </li>
+                            <li class="flex justify-between border-b border-gray-800 pb-2">
+                                <span class="text-gray-500">University:</span>
+                                <span class="text-gray-300 text-right">UWS (London)</span>
+                            </li>
+                            <li class="flex justify-between border-b border-gray-800 pb-2">
+                                <span class="text-gray-500">Experience:</span>
+                                <span class="text-gray-300">2.5+ Years</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="text-gray-500">Status:</span>
+                                <span class="text-emerald-400">Open to Roles</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <!-- Updated About Image -->
-                <!-- 
-                <div class="hidden md:block">
-                    <img class="w-full h-auto rounded-xl shadow-2xl" src="https://placehold.co/600x400/2563EB/ffffff?text=Coding+in+Action" alt="Parth Patel working on a mobile app" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1f2937/d1d5db?text=About+Image';">
-                </div>
-                -->
             </div>
         </section>
 
         <!-- Experience Section -->
-        <section id="experience" class="py-20 md:py-24 fade-in-section">
-            <h2 class="text-3xl sm:text-4xl font-bold text-center text-white mb-12">Experience</h2>
-            <div class="relative pl-6 md:pl-10">
-                <!-- Timeline line -->
-                <div class="absolute left-0 top-0 w-1 h-full bg-gray-700 rounded-full md:left-4"></div>
-
-                <!-- Experience Item 1 -->
-                <div class="mb-12 relative pl-8 md:pl-10">
-                    <div class="absolute left-0 top-0 w-6 h-6 rounded-full bg-cyan-500 flex items-center justify-center md:left-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-briefcase text-white"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-                    </div>
-                    <div class="bg-gray-800 p-6 rounded-xl shadow-xl transform hover:scale-[1.02] transition-all duration-300">
-                        <h3 class="text-xl font-bold text-white">Mobile Application Developer</h3>
-                        <div class="flex items-baseline space-x-2">
-                            <h6 class="text-sm font-bold text-white">
-                                <a href="https://maahi.it/" class="hover:text-cyan-400 transition-colors duration-300">Maahi IT</a>
-                            </h6>
-                            <p class="text-gray-400 text-sm">May 2023 - March 2025</p>
+        <section id="experience" class="py-24 fade-in-section">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-white mb-16">Work Experience</h2>
+            <div class="max-w-4xl mx-auto space-y-12">
+                <!-- Maahi IT - Full Time -->
+                <div class="flex gap-6 group">
+                    <div class="flex flex-col items-center">
+                        <div class="w-10 h-10 rounded-full bg-cyan-500/20 border border-cyan-500/50 flex items-center justify-center text-cyan-400 group-hover:scale-110 transition-transform">
+                            <i data-lucide="briefcase" class="w-5 h-5"></i>
                         </div>
-                        <ul class="list-disc list-inside text-gray-300 space-y-1 mt-2">
+                        <div class="w-px h-full bg-gray-800 mt-2"></div>
+                    </div>
+                    <div class="pb-12">
+                        <h3 class="text-2xl font-bold text-white">Mobile Application Developer</h3>
+                        <p class="mb-4">
+                            <a href="https://maahi.it/" target="_blank" class="text-cyan-400 font-medium hover:text-cyan-300 hover:underline transition-colors duration-200">
+                                Maahi IT
+                            </a> 
+                            <span class="text-gray-500 mx-2">|</span> 
+                            <span class="text-gray-400">May 2023 - March 2025</span>
+                        </p>
+                        <ul class="list-disc list-outside ml-4 space-y-3 text-gray-400">
                             <li>Promoted to full-time developer after internship due to strong performance and quick learning.</li>
                             <li>Took ownership of mobile development using both Android (Java) and Flutter.</li>
                             <li>Published multiple applications on the Google Play Store, managing the release and update cycles.</li>
@@ -154,21 +198,25 @@
                         </ul>
                     </div>
                 </div>
-                
-                <!-- Experience Item 2 -->
-                <div class="mb-12 relative pl-8 md:pl-10">
-                    <div class="absolute left-0 top-0 w-6 h-6 rounded-full bg-cyan-500 flex items-center justify-center md:left-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-laptop-2 text-white"><rect width="20" height="12" x="2" y="6" rx="2" ry="2"/><path d="M2 18h20"/><path d="M14.5 22h-5"/></svg>
-                    </div>
-                    <div class="bg-gray-800 p-6 rounded-xl shadow-xl transform hover:scale-[1.02] transition-all duration-300">
-                        <h3 class="text-xl font-bold text-white">Intern Mobile Application Developer</h3>
-                        <div class="flex items-baseline space-x-2">
-                            <h6 class="text-sm font-bold text-white">
-                                <a href="https://maahi.it/" class="hover:text-cyan-400 transition-colors duration-300">Maahi IT</a>
-                            </h6>
-                            <p class="text-gray-400 text-sm">January 2023 - May 2023</p>
+
+                <!-- Maahi IT - Intern -->
+                <div class="flex gap-6 group">
+                    <div class="flex flex-col items-center">
+                        <div class="w-10 h-10 rounded-full bg-emerald-500/20 border border-emerald-500/50 flex items-center justify-center text-emerald-400 group-hover:scale-110 transition-transform">
+                            <i data-lucide="graduation-cap" class="w-5 h-5"></i>
                         </div>
-                        <ul class="list-disc list-inside text-gray-300 space-y-1 mt-2">
+                        <div class="w-px h-full bg-gray-800 mt-2"></div>
+                    </div>
+                    <div class="pb-12">
+                        <h3 class="text-2xl font-bold text-white">Intern Mobile Application Developer</h3>
+                        <p class="mb-4">
+                            <a href="https://maahi.it/" target="_blank" class="text-emerald-400 font-medium hover:text-emerald-300 hover:underline transition-colors duration-200">
+                                Maahi IT
+                            </a> 
+                            <span class="text-gray-500 mx-2">|</span> 
+                            <span class="text-gray-400">Jan 2023 - May 2023</span>
+                        </p>
+                        <ul class="list-disc list-outside ml-4 space-y-3 text-gray-400">
                             <li>Acquired hands-on experience in building Android applications using Java and Android Studio.</li>
                             <li>Learned key concepts such as activity lifecycle, UI components, and API integration.</li>
                             <li>Collaborated with senior developers to understand real-world app architecture and debugging techniques.</li>
@@ -179,20 +227,24 @@
                     </div>
                 </div>
 
-                <!-- Experience Item 3 -->
-                <div class="mb-12 relative pl-8 md:pl-10">
-                    <div class="absolute left-0 top-0 w-6 h-6 rounded-full bg-cyan-500 flex items-center justify-center md:left-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-laptop-2 text-white"><rect width="20" height="12" x="2" y="6" rx="2" ry="2"/><path d="M2 18h20"/><path d="M14.5 22h-5"/></svg>
-                    </div>
-                    <div class="bg-gray-800 p-6 rounded-xl shadow-xl transform hover:scale-[1.02] transition-all duration-300">
-                        <h3 class="text-xl font-bold text-white">Internship Anguler developer</h3>
-                        <div class="flex items-baseline space-x-2">
-                            <h6 class="text-sm font-bold text-white">
-                                <a href="https://rkwebsofttech.com/" class="hover:text-cyan-400 transition-colors duration-300">RK Websoft Technologies Pvt Ltd</a>
-                            </h6>
-                            <p class="text-gray-400 text-sm">June 2022 - July 2022</p>
+                <!-- RK Websoft Technologies Pvt Ltd - Intern -->
+                <div class="flex gap-6 group">
+                    <div class="flex flex-col items-center">
+                        <div class="w-10 h-10 rounded-full bg-blue-500/20 border border-blue-500/50 flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
+                            <i data-lucide="graduation-cap" class="w-5 h-5"></i>
                         </div>
-                        <ul class="list-disc list-inside text-gray-300 space-y-1 mt-2">
+                        <div class="w-px h-full bg-gray-800 mt-2"></div>
+                    </div>
+                    <div class="pb-12">
+                        <h3 class="text-2xl font-bold text-white">Internship Anguler developer</h3>
+                        <p class="mb-4">
+                            <a href="https://rkwebsofttech.com/" target="_blank" class="text-blue-400 font-medium hover:text-blue-300 hover:underline transition-colors duration-200">
+                               RK Websoft Technologies Pvt Ltd
+                            </a> 
+                            <span class="text-gray-500 mx-2">|</span> 
+                            <span class="text-gray-400">June 2022 - July 2022</span>
+                        </p>
+                        <ul class="list-disc list-outside ml-4 space-y-3 text-gray-400">
                             <li>Developed dynamic web applications using Angular framework and TypeScript.</li>
                             <li>Worked on building responsive user interfaces following modern design principles.</li>
                             <li>Implemented RESTful API integrations to enhance app functionality.</li>
@@ -205,175 +257,166 @@
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="py-20 md:py-24 fade-in-section">
-            <h2 class="text-3xl sm:text-4xl font-bold text-center text-white mb-12">My Projects</h2>
-            <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                <!-- Project Card 1 -->
-                <div class="bg-gray-800 rounded-xl p-6 shadow-xl transform hover:scale-105 transition-all duration-300 group">
-                    <div class="flex justify-center mb-4">
-                        <img class="w-full h-48 object-cover rounded-md" src="https://play-lh.googleusercontent.com/uh9eig8uvHCPrN5A9VlJhsMNLnojygMhc3gtBYARURf0Ez6L0KabWBQJnu3W-EVIzMIO=w416-h235-rw" alt="Project 1 thumbnail" onerror="this.onerror=null;this.src='https://play-lh.googleusercontent.com/uh9eig8uvHCPrN5A9VlJhsMNLnojygMhc3gtBYARURf0Ez6L0KabWBQJnu3W-EVIzMIO=w416-h235-rw';">
+        <section id="projects" class="py-24 fade-in-section">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-white mb-16">Featured Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- CASA -->
+                <div class="bg-gray-900 rounded-2xl overflow-hidden border border-gray-800 hover:border-cyan-500/50 transition-all group">
+                    <div class="h-48 overflow-hidden">
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://play-lh.googleusercontent.com/uh9eig8uvHCPrN5A9VlJhsMNLnojygMhc3gtBYARURf0Ez6L0KabWBQJnu3W-EVIzMIO=w416-h235-rw" alt="CASA App">
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors duration-300">CASA (Flutter)</h3>
-                    <p class="text-gray-300 mb-4">The ultimate fashion marketplace where you can explore and shop a wide range of clothing from both established brands and thrift stores—all in one place. With an intuitive swipe-based interface inspired by modern social apps, Casa makes shopping more interactive, fun, and personalized.</p>
-                    <div class="flex space-x-4">
-                        <a href="https://play.google.com/store/apps/details?id=com.casashop.casaflutterapp&hl=en" class="text-sm font-medium text-white px-4 py-2 bg-gray-700 rounded-full hover:bg-gray-600 transition-colors duration-300">Live Demo</a>
-                    </div>
-                </div>
-
-                 <!-- Project Card 2 -->
-                <div class="bg-gray-800 rounded-xl p-6 shadow-xl transform hover:scale-105 transition-all duration-300 group">
-                    <div class="flex justify-center mb-4">
-                        <img class=" h-48 object-cover rounded-md" src="https://play-lh.googleusercontent.com/7WgoqonkdlzUjlL4RTPctOsmzfHfnyyJDN2v0IBqlUIitzihUafW8cA6ybZoXGBh1ok=w240-h480-rw" alt="Project 2 thumbnail" onerror="this.onerror=null;this.src='https://play-lh.googleusercontent.com/AFjYkTUc6D93GmkeprX8ruJvMy6xfLnRq-S5ooLZF-rkoDs5ccW8smrJdkNGg1jxMpE=w240-h480-rw';">
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors duration-300">Bodha Route Planner (Flutter)</h3>
-                    <p class="text-gray-300 mb-4">Developed Bodha Route Planner, a high-performance logistics tool that optimizes multi-stop routing by solving the Traveling Salesman Problem (TSP) via RESTful APIs. I integrated Google Maps/Places APIs for precise geocoding and address validation, while using GetX for reactive UI management and state-driven navigation.</p>
-                    <div class="flex space-x-4">
-                        <a href="https://play.google.com/store/apps/details?id=com.multistop.routeplanner" class="text-sm font-medium text-white px-4 py-2 bg-gray-700 rounded-full hover:bg-gray-600 transition-colors duration-300">Live Demo</a>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-white">CASA (Flutter)</h3>
+                        <p class="text-gray-400 text-sm mb-4">The ultimate fashion marketplace where you can explore and shop a wide range of clothing from both established brands and thrift stores—all in one place. With an intuitive swipe-based interface inspired by modern social apps, Casa makes shopping more interactive, fun, and personalized.    </p>
+                        <a href="https://play.google.com/store/apps/details?id=com.casashop.casaflutterapp" target="_blank" class="inline-flex items-center text-cyan-400 hover:underline">
+                            View on Play Store <i data-lucide="external-link" class="w-4 h-4 ml-2"></i>
+                        </a>
                     </div>
                 </div>
 
-                <!-- Project Card 3 -->
-                <div class="bg-gray-800 rounded-xl p-6 shadow-xl transform hover:scale-105 transition-all duration-300 group">
-                    <div class="flex justify-center mb-4">
-                        <img class=" h-48 object-cover rounded-md" src="https://play-lh.googleusercontent.com/AFjYkTUc6D93GmkeprX8ruJvMy6xfLnRq-S5ooLZF-rkoDs5ccW8smrJdkNGg1jxMpE=w240-h480-rw" alt="Project 2 thumbnail" onerror="this.onerror=null;this.src='https://play-lh.googleusercontent.com/AFjYkTUc6D93GmkeprX8ruJvMy6xfLnRq-S5ooLZF-rkoDs5ccW8smrJdkNGg1jxMpE=w240-h480-rw';">
+                <!-- Zydex Road -->
+                <div class="bg-gray-900 rounded-2xl overflow-hidden border border-gray-800 hover:border-blue-500/50 transition-all group lg:col-start-2">
+                    <div class="h-48 overflow-hidden bg-gray-800 flex items-center justify-center">
+                        <img class="h-full object-contain p-4 transition-transform duration-500 group-hover:scale-110" src="https://play-lh.googleusercontent.com/AFjYkTUc6D93GmkeprX8ruJvMy6xfLnRq-S5ooLZF-rkoDs5ccW8smrJdkNGg1jxMpE=w240-h480-rw" alt="Zydex Road">
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors duration-300">Zydex Road (Flutter)</h3>
-                    <p class="text-gray-300 mb-4">Developed a dynamic application, similar to Monday.com, using dynamic fields and values sourced from an API. GetX was used for UI optimization, and Firebase was used for notifications.</p>
-                    <div class="flex space-x-4">
-                        <a href="https://play.google.com/store/apps/details?id=com.maahiit.zydex_road_app&hl=en" class="text-sm font-medium text-white px-4 py-2 bg-gray-700 rounded-full hover:bg-gray-600 transition-colors duration-300">Live Demo</a>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-white">Zydex Road (Flutter)</h3>
+                        <p class="text-gray-400 text-sm mb-4">Developed a dynamic application, similar to Monday.com, using dynamic fields and values sourced from an API. GetX was used for UI optimization, and Firebase was used for notifications.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.maahiit.zydex_road_app" target="_blank" class="inline-flex items-center text-blue-400 hover:underline">
+                            View on Play Store <i data-lucide="external-link" class="w-4 h-4 ml-2"></i>
+                        </a>
                     </div>
                 </div>
 
-                <!-- Project Card 4 -->
-                <div class="bg-gray-800 rounded-xl p-6 shadow-xl transform hover:scale-105 transition-all duration-300 group">
-                    <div class="flex justify-center mb-4">
-                        <img class="h-48 object-cover rounded-md" src="https://play-lh.googleusercontent.com/PJC3QpudNJwZ14ybJAdls-amjvoDjr0z5VKg0M6J6LpxABGTHbaAUJkFbh-Iwtt8veoG=s94-rw" alt="Project 3 thumbnail" onerror="this.onerror=null;this.src='https://play-lh.googleusercontent.com/PJC3QpudNJwZ14ybJAdls-amjvoDjr0z5VKg0M6J6LpxABGTHbaAUJkFbh-Iwtt8veoG=s94-rw';">
+                <!-- Bodha Route Planner -->
+                <div class="bg-gray-900 rounded-2xl overflow-hidden border border-gray-800 hover:border-emerald-500/50 transition-all group">
+                    <div class="h-48 overflow-hidden bg-gray-800 flex items-center justify-center">
+                        <img class="h-full object-contain p-4 transition-transform duration-500 group-hover:scale-110" src="https://play-lh.googleusercontent.com/7WgoqonkdlzUjlL4RTPctOsmzfHfnyyJDN2v0IBqlUIitzihUafW8cA6ybZoXGBh1ok=w240-h480-rw" alt="Bodha Route Planner">
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors duration-300">Zydex applications (Android)</h3>
-                    <p class="text-gray-300 mb-4">I work on all Zydex applications at Maahi IT. These apps are CRMs. Additionally, monitor the worker's location and total kilometers traveled for staff and track all the product info, user rewards and discount.</p>
-                    <div class="flex space-x-4">
-                        <a href="https://play.google.com/store/apps/dev?id=7608500595013710517&hl=en" class="text-sm font-medium text-white px-4 py-2 bg-gray-700 rounded-full hover:bg-gray-600 transition-colors duration-300">Live Demo</a>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-white">Bodha Route Planner</h3>
+                        <p class="text-gray-400 text-sm mb-4">Developed Bodha Route Planner, a high-performance logistics tool that optimizes multi-stop routing by solving the Traveling Salesman Problem (TSP) via RESTful APIs. I integrated Google Maps/Places APIs for precise geocoding and address validation, while using GetX for reactive UI management and state-driven navigation.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.multistop.routeplanner" target="_blank" class="inline-flex items-center text-emerald-400 hover:underline">
+                            View on Play Store <i data-lucide="external-link" class="w-4 h-4 ml-2"></i>
+                        </a>
                     </div>
                 </div>
+
+                <!-- Zydex applications (Android) (Middle) -->
+                <div class="bg-gray-900 rounded-2xl overflow-hidden border border-gray-800 hover:border-orange-500/50 transition-all group lg:col-start-2">
+                    <div class="h-48 overflow-hidden bg-gray-800 flex items-center justify-center">
+                        <img class="h-full object-contain p-4 transition-transform duration-500 group-hover:scale-110" src="https://play-lh.googleusercontent.com/PJC3QpudNJwZ14ybJAdls-amjvoDjr0z5VKg0M6J6LpxABGTHbaAUJkFbh-Iwtt8veoG=s94-rw" alt="Zydex applications (Android)">
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-xl font-bold text-white">Zydex applications (Android)</h3>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4">I work on all Zydex applications at Maahi IT. These apps are CRMs. Additionally, monitor the worker's location and total kilometers traveled for staff and track all the product info, user rewards and discount.</p>
+                        <div class="mt-auto">
+                            <a href="https://play.google.com/store/apps/dev?id=7608500595013710517" target="_blank" class="inline-flex items-center text-orange-400 hover:underline">
+                                View Full Play Store <i data-lucide="external-link" class="w-4 h-4 ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
         <!-- Skills Section -->
-        <section id="skills" class="py-20 md:py-24 fade-in-section">
-            <h2 class="text-3xl sm:text-4xl font-bold text-center text-white mb-12">My Skills</h2>
-            <div class="flex flex-wrap justify-center gap-8">
-                
-                <!-- Mobile Development & Languages -->
-                <div class="bg-gray-800 rounded-xl p-6 shadow-xl w-full md:w-1/2 lg:w-1/3">
-                    <h3 class="text-xl font-bold text-white mb-4">Mobile Development & Languages</h3>
+        <section id="skills" class="py-24 fade-in-section">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-white mb-16">Technical Arsenal</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+               <!-- Mobile Card -->
+                <div class="bg-gray-900 p-6 rounded-2xl border border-gray-800">
+                    <h3 class="text-cyan-400 font-bold mb-4 flex items-center"><i data-lucide="smartphone" class="mr-2"></i> Mobile</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="inline-block bg-gray-900 text-cyan-400 font-medium px-4 py-1 rounded-full shadow">Flutter ⭐</span>
-                        <span class="inline-block bg-gray-900 text-teal-400 font-medium px-4 py-1 rounded-full shadow">Android (Java) ⭐</span>
-                        <span class="inline-block bg-gray-900 text-emerald-400 font-medium px-4 py-1 rounded-full shadow">Dart ⭐</span>
-                        <span class="inline-block bg-gray-900 text-gray-300 font-medium px-4 py-1 rounded-full shadow">Java</span>
-                        <span class="inline-block bg-gray-900 text-gray-300 font-medium px-4 py-1 rounded-full shadow">XML</span>
-                        <span class="inline-block bg-gray-900 text-gray-300 font-medium px-4 py-1 rounded-full shadow">OOP</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">Flutter</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">Android (Java)</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">Dart</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">XML</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">GetX/Bloc</span>
                     </div>
                 </div>
-
-                <!-- Web Development -->
-                <div class="bg-gray-800 rounded-xl p-6 shadow-xl w-full md:w-1/2 lg:w-1/3">
-                    <h3 class="text-xl font-bold text-white mb-4">Web Development</h3>
+                <!-- Tools & Cloud -->
+                <div class="bg-gray-900 p-6 rounded-2xl border border-gray-800">
+                    <h3 class="text-emerald-400 font-bold mb-4 flex items-center"><i data-lucide="cloud" class="mr-2"></i> Cloud & Tools</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="inline-block bg-gray-900 text-sky-400 font-medium px-4 py-1 rounded-full shadow">Angular</span>
-                        <span class="inline-block bg-gray-900 text-green-400 font-medium px-4 py-1 rounded-full shadow">TypeScript</span>
-                        <span class="inline-block bg-gray-900 text-blue-400 font-medium px-4 py-1 rounded-full shadow">PHP</span>
-                        <span class="inline-block bg-gray-900 text-emerald-400 font-medium px-4 py-1 rounded-full shadow">Python</span>
-                        <span class="inline-block bg-gray-900 text-cyan-400 font-medium px-4 py-1 rounded-full shadow">JavaScript</span>
-                        <span class="inline-block bg-gray-900 text-teal-400 font-medium px-4 py-1 rounded-full shadow">HTML</span>
-                        <span class="inline-block bg-gray-900 text-green-400 font-medium px-4 py-1 rounded-full shadow">CSS</span>
-                        <span class="inline-block bg-gray-900 text-blue-400 font-medium px-4 py-1 rounded-full shadow">React (Learning)</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">Firebase</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">Git/GitHub</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">Google Maps API</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">Postman</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">Google Console</span>
                     </div>
                 </div>
-
-                <!-- Tools & Technologies -->
-                <div class="bg-gray-800 rounded-xl p-6 shadow-xl w-full md:w-1/2 lg:w-1/3">
-                    <h3 class="text-xl font-bold text-white mb-4">Tools & Technologies</h3>
+                <!-- Core Development -->
+                <div class="bg-gray-900 p-6 rounded-2xl border border-gray-800">
+                    <h3 class="text-blue-400 font-bold mb-4 flex items-center"><i data-lucide="layers" class="mr-2"></i> Core</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="inline-block bg-gray-900 text-green-400 font-medium px-4 py-1 rounded-full shadow">GitHub ⭐</span>
-                        <span class="inline-block bg-gray-900 text-blue-400 font-medium px-4 py-1 rounded-full shadow">API Integration ⭐</span>
-                        <span class="inline-block bg-gray-900 text-green-400 font-medium px-4 py-1 rounded-full shadow">JSON</span>
-                        <span class="inline-block bg-gray-900 text-sky-400 font-medium px-4 py-1 rounded-full shadow">Debugging</span>
-                        <span class="inline-block bg-gray-900 text-blue-400 font-medium px-4 py-1 rounded-full shadow">Android Studio</span>
-                        <span class="inline-block bg-gray-900 text-blue-400 font-medium px-4 py-1 rounded-full shadow">Visual Studio</span>
-                        <span class="inline-block bg-gray-900 text-teal-400 font-medium px-4 py-1 rounded-full shadow">Postman</span>
-                        <span class="inline-block bg-gray-900 text-sky-400 font-medium px-4 py-1 rounded-full shadow">FireBase</span>
-                        <span class="inline-block bg-gray-900 text-cyan-400 font-medium px-4 py-1 rounded-full shadow">Google Play Console</span>
-                        <span class="inline-block bg-gray-900 text-cyan-400 font-medium px-4 py-1 rounded-full shadow">Google API Integration</span>
-                        <span class="inline-block bg-gray-900 text-sky-400 font-medium px-4 py-1 rounded-full shadow">MVVM Architectural</span>
-                        <span class="inline-block bg-gray-900 text-cyan-400 font-medium px-4 py-1 rounded-full shadow">MVC Architectural</span>
-                        <span class="inline-block bg-gray-900 text-cyan-400 font-medium px-4 py-1 rounded-full shadow">MongoDB</span>
-                        <span class="inline-block bg-gray-900 text-teal-400 font-medium px-4 py-1 rounded-full shadow">MySQL</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">MVVM/MVC</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">REST APIs</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">OOP</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">Architecture Design</span>
                     </div>
                 </div>
-
-                <!-- Soft Skills -->
-                <div class="bg-gray-800 rounded-xl p-6 shadow-xl w-full md:w-1/2 lg:w-1/3">
-                    <h3 class="text-xl font-bold text-white mb-4">Soft Skills</h3>
+                <!-- Backend & Web -->
+                <div class="bg-gray-900 p-6 rounded-2xl border border-gray-800">
+                    <h3 class="text-orange-400 font-bold mb-4 flex items-center"><i data-lucide="database" class="mr-2"></i> Data & Web</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="inline-block bg-gray-900 text-blue-400 font-medium px-4 py-1 rounded-full shadow">Leadership</span>
-                        <span class="inline-block bg-gray-900 text-emerald-400 font-medium px-4 py-1 rounded-full shadow">Mentorship</span>
-                        <span class="inline-block bg-gray-900 text-green-400 font-medium px-4 py-1 rounded-full shadow">English (IELTS 6.00)</span>
-                        <span class="inline-block bg-gray-900 text-sky-400 font-medium px-4 py-1 rounded-full shadow">Communication</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">SQLite</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">MySQL</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">MongoDB</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">PHP/Node.js</span>
                     </div>
                 </div>
-
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="py-20 md:py-24 text-center fade-in-section">
-            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">Get in Touch</h2>
-            <p class="text-gray-300 max-w-2xl mx-auto mb-8">
-                I'm always open to new opportunities and collaborations. Feel free to reach out to me via email or connect with me on social media.
+        <section id="contact" class="py-24 text-center fade-in-section">
+            <h2 class="text-4xl font-bold text-white mb-6">Let's Connect</h2>
+            <p class="text-gray-400 max-w-xl mx-auto mb-10 text-lg">
+                I'm currently looking for new opportunities in mobile development. Whether you have a question or just want to say hi, my inbox is always open!
             </p>
-            <a href="mailto:patelparthm2000@gmail.com" class="inline-block px-8 py-3 text-lg font-medium text-white bg-gradient-to-r from-cyan-500 to-emerald-600 rounded-full shadow-lg hover:from-cyan-600 hover:to-emerald-700 transform hover:scale-105 transition-all duration-300">
-                Email Me
-            </a>
-            <div class="mt-8 flex justify-center space-x-6 text-gray-300">
-                <a href="https://www.linkedin.com/in/parth-patel2510/" class="hover:text-cyan-400 transition-colors duration-300">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin">
-                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2a2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                        <rect width="4" height="12" x="2" y="9" />
-                        <circle cx="4" cy="4" r="2" />
-                    </svg>
+            <div class="flex flex-col items-center space-y-6">
+                <a href="mailto:patelparthm2000@gmail.com" class="inline-flex items-center px-10 py-4 text-xl font-bold text-white bg-gradient-to-r from-cyan-600 to-emerald-600 rounded-full hover:scale-105 transition-transform shadow-xl">
+                    <i data-lucide="mail" class="mr-3"></i> patelparthm2000@gmail.com
                 </a>
-                <a href="https://github.com/patelparth-2000" class="hover:text-cyan-400 transition-colors duration-300">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.304.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.465-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.046.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.652.242 2.873.118 3.176.771.84 1.236 1.911 1.236 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                    </svg>
-                </a>
+                <div class="flex space-x-8 text-gray-400">
+                    <a href="https://www.linkedin.com/in/parth-patel2510/" target="_blank" class="hover:text-cyan-400 transition-colors">
+                        <i data-lucide="linkedin" class="w-8 h-8"></i>
+                    </a>
+                    <a href="https://github.com/patelparth-2000" target="_blank" class="hover:text-white transition-colors">
+                        <i data-lucide="github" class="w-8 h-8"></i>
+                    </a>
+                </div>
             </div>
         </section>
-
     </main>
 
-    <!-- Scroll to Top Button -->
-    <button id="scroll-to-top" class="fixed bottom-6 right-6 bg-cyan-600 text-white p-3 rounded-full shadow-lg transition-opacity duration-300 opacity-0 z-50 hover:bg-cyan-700">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-up"><path d="m18 15-6-6-6 6"/></svg>
-    </button>
-
     <!-- Footer -->
-    <footer class="bg-gray-900 py-6 text-center text-gray-400">
+    <footer class="bg-gray-950 border-t border-gray-900 py-12 text-center text-gray-500">
         <p>&copy; <span id="year"></span> Parth Patel. All rights reserved.</p>
     </footer>
 
-    <!-- JavaScript for Mobile Menu & Smooth Scrolling & Animations -->
+    <!-- Scroll to Top Button -->
+    <button id="scroll-to-top" class="fixed bottom-8 right-8 bg-cyan-600 text-white p-4 rounded-full shadow-2xl transition-all duration-300 opacity-0 z-50 hover:bg-cyan-500 hover:-translate-y-2 pointer-events-none">
+        <i data-lucide="arrow-up" class="w-6 h-6"></i>
+    </button>
+
+    <!-- Scripts -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Get the current year for the footer
+            // Initialize Lucide icons
+            lucide.createIcons();
+
+            // Dynamic Year
             document.getElementById('year').textContent = new Date().getFullYear();
 
-            // Mobile menu toggle logic
+            // Mobile Menu Toggle
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
-
+            
             mobileMenuButton.addEventListener('click', () => {
                 mobileMenu.classList.toggle('open');
             });
@@ -382,12 +425,15 @@
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                    // Close mobile menu after clicking a link
-                    if (mobileMenu.classList.contains('open')) {
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                        // Close mobile menu after clicking a link
+                        if (mobileMenu.classList.contains('open')) {
                             mobileMenu.classList.remove('open');
+                        }
                     }
                 });
             });
@@ -396,10 +442,12 @@
             const scrollToTopButton = document.getElementById('scroll-to-top');
 
             window.addEventListener('scroll', () => {
-                if (window.scrollY > 300) {
+                if (window.scrollY > 500) {
                     scrollToTopButton.style.opacity = '1';
+                    scrollToTopButton.style.pointerEvents = 'auto';
                 } else {
                     scrollToTopButton.style.opacity = '0';
+                    scrollToTopButton.style.pointerEvents = 'none';
                 }
             });
 
@@ -410,7 +458,7 @@
                 });
             });
             
-            // Fade-in on scroll logic
+            // Fade-in on scroll logic using Intersection Observer
             const fadeInSections = document.querySelectorAll('.fade-in-section');
             const observerOptions = {
                 root: null,
@@ -418,11 +466,10 @@
                 rootMargin: '0px'
             };
 
-            const observer = new IntersectionObserver((entries, observer) => {
+            const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('is-visible');
-                        observer.unobserve(entry.target);
                     }
                 });
             }, observerOptions);
@@ -434,10 +481,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
