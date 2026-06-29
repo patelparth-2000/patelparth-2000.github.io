@@ -310,63 +310,89 @@
         <section id="projects" class="py-24 fade-in-section">
             <h2 class="text-3xl sm:text-4xl font-bold text-center text-white mb-16">Featured Projects</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Zydex CRM Apps (Android) -->
+                <div class="bg-gray-900 rounded-2xl overflow-hidden border border-gray-800 hover:border-orange-500/50 transition-all duration-300 group flex flex-col">
+                    <div class="h-48 overflow-hidden bg-gray-800 flex items-center justify-center">
+                        <img class="h-full object-contain p-4 transition-transform duration-500 group-hover:scale-110" src="https://play-lh.googleusercontent.com/PJC3QpudNJwZ14ybJAdls-amjvoDjr0z5VKg0M6J6LpxABGTHbaAUJkFbh-Iwtt8veoG=s94-rw" alt="Zydex CRM Apps">
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-xl font-bold text-white">Zydex CRM Apps</h3>
+                            <span class="ml-2 flex-shrink-0 px-2 py-0.5 bg-orange-500/10 border border-orange-500/30 rounded text-orange-400 text-xs">Android · Java</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4 flex-1">Production CRM suite for field staff. Built background GPS tracking with Java thread pools and BroadcastReceivers — battery-optimised, running reliably across OEM devices. Handles location aggregation, daily distance calculations, and task management for field teams.</p>
+                        <a href="https://play.google.com/store/apps/dev?id=7608500595013710517" target="_blank" class="inline-flex items-center text-orange-400 hover:underline text-sm">
+                            View on Play Store <i data-lucide="external-link" class="w-4 h-4 ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
                 <!-- CASA -->
-                <div class="bg-gray-900 rounded-2xl overflow-hidden border border-gray-800 hover:border-cyan-500/50 transition-all group">
+                <div class="bg-gray-900 rounded-2xl overflow-hidden border border-gray-800 hover:border-cyan-500/50 transition-all duration-300 group flex flex-col">
                     <div class="h-48 overflow-hidden">
                         <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://play-lh.googleusercontent.com/uh9eig8uvHCPrN5A9VlJhsMNLnojygMhc3gtBYARURf0Ez6L0KabWBQJnu3W-EVIzMIO=w416-h235-rw" alt="CASA App">
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-white">CASA (Flutter)</h3>
-                        <p class="text-gray-400 text-sm mb-4">The ultimate fashion marketplace where you can explore and shop a wide range of clothing from both established brands and thrift stores—all in one place. With an intuitive swipe-based interface inspired by modern social apps, Casa makes shopping more interactive, fun, and personalized.    </p>
-                        <a href="https://play.google.com/store/apps/details?id=com.casashop.casaflutterapp" target="_blank" class="inline-flex items-center text-cyan-400 hover:underline">
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-xl font-bold text-white">CASA Fashion Marketplace</h3>
+                            <span class="ml-2 flex-shrink-0 px-2 py-0.5 bg-cyan-500/10 border border-cyan-500/30 rounded text-cyan-400 text-xs">Flutter · BLoC</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4 flex-1">Fashion marketplace with a swipe-based shopping interface. Built on Flutter with BLoC state management and GraphQL API integration. Features payment gateway, product browsing, and custom gesture-driven UI inspired by modern social apps.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.casashop.casaflutterapp" target="_blank" class="inline-flex items-center text-cyan-400 hover:underline text-sm">
                             View on Play Store <i data-lucide="external-link" class="w-4 h-4 ml-2"></i>
                         </a>
                     </div>
                 </div>
 
                 <!-- Zydex Road -->
-                <div class="bg-gray-900 rounded-2xl overflow-hidden border border-gray-800 hover:border-blue-500/50 transition-all group lg:col-start-2">
+                <div class="bg-gray-900 rounded-2xl overflow-hidden border border-gray-800 hover:border-blue-500/50 transition-all duration-300 group flex flex-col">
                     <div class="h-48 overflow-hidden bg-gray-800 flex items-center justify-center">
                         <img class="h-full object-contain p-4 transition-transform duration-500 group-hover:scale-110" src="https://play-lh.googleusercontent.com/AFjYkTUc6D93GmkeprX8ruJvMy6xfLnRq-S5ooLZF-rkoDs5ccW8smrJdkNGg1jxMpE=w240-h480-rw" alt="Zydex Road">
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-white">Zydex Road (Flutter)</h3>
-                        <p class="text-gray-400 text-sm mb-4">Developed a dynamic application, similar to Monday.com, using dynamic fields and values sourced from an API. GetX was used for UI optimization, and Firebase was used for notifications.</p>
-                        <a href="https://play.google.com/store/apps/details?id=com.maahiit.zydex_road_app" target="_blank" class="inline-flex items-center text-blue-400 hover:underline">
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-xl font-bold text-white">Zydex Road — Field CRM</h3>
+                            <span class="ml-2 flex-shrink-0 px-2 py-0.5 bg-blue-500/10 border border-blue-500/30 rounded text-blue-400 text-xs">Flutter · GetX</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4 flex-1">Dynamic field CRM built like Monday.com — fully configurable forms and workflows driven by live API payloads with no hardcoded fields. GetX for reactive state management; Firebase Cloud Messaging for real-time push notifications to field workers.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.maahiit.zydex_road_app" target="_blank" class="inline-flex items-center text-blue-400 hover:underline text-sm">
                             View on Play Store <i data-lucide="external-link" class="w-4 h-4 ml-2"></i>
                         </a>
                     </div>
                 </div>
 
                 <!-- Bodha Route Planner -->
-                <div class="bg-gray-900 rounded-2xl overflow-hidden border border-gray-800 hover:border-emerald-500/50 transition-all group">
+                <div class="bg-gray-900 rounded-2xl overflow-hidden border border-gray-800 hover:border-emerald-500/50 transition-all duration-300 group flex flex-col">
                     <div class="h-48 overflow-hidden bg-gray-800 flex items-center justify-center">
                         <img class="h-full object-contain p-4 transition-transform duration-500 group-hover:scale-110" src="https://play-lh.googleusercontent.com/7WgoqonkdlzUjlL4RTPctOsmzfHfnyyJDN2v0IBqlUIitzihUafW8cA6ybZoXGBh1ok=w240-h480-rw" alt="Bodha Route Planner">
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-white">Bodha Route Planner</h3>
-                        <p class="text-gray-400 text-sm mb-4">Developed Bodha Route Planner, a high-performance logistics tool that optimizes multi-stop routing by solving the Traveling Salesman Problem (TSP) via RESTful APIs. I integrated Google Maps/Places APIs for precise geocoding and address validation, while using GetX for reactive UI management and state-driven navigation.</p>
-                        <a href="https://play.google.com/store/apps/details?id=com.multistop.routeplanner" target="_blank" class="inline-flex items-center text-emerald-400 hover:underline">
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-xl font-bold text-white">Bodha Route Planner</h3>
+                            <span class="ml-2 flex-shrink-0 px-2 py-0.5 bg-emerald-500/10 border border-emerald-500/30 rounded text-emerald-400 text-xs">Flutter · Maps API</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4 flex-1">Logistics tool that solves the Travelling Salesman Problem for multi-stop route optimisation via RESTful APIs. Google Maps/Places API for geocoding and address validation. Solo developer — requirements through to Play Store release.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.multistop.routeplanner" target="_blank" class="inline-flex items-center text-emerald-400 hover:underline text-sm">
                             View on Play Store <i data-lucide="external-link" class="w-4 h-4 ml-2"></i>
                         </a>
                     </div>
                 </div>
 
-                <!-- Zydex applications (Android) (Middle) -->
-                <div class="bg-gray-900 rounded-2xl overflow-hidden border border-gray-800 hover:border-orange-500/50 transition-all group lg:col-start-2">
+                <!-- Receipt Scanning System -->
+                <div class="bg-gray-900 rounded-2xl overflow-hidden border border-gray-800 hover:border-purple-500/50 transition-all duration-300 group flex flex-col">
                     <div class="h-48 overflow-hidden bg-gray-800 flex items-center justify-center">
-                        <img class="h-full object-contain p-4 transition-transform duration-500 group-hover:scale-110" src="https://play-lh.googleusercontent.com/PJC3QpudNJwZ14ybJAdls-amjvoDjr0z5VKg0M6J6LpxABGTHbaAUJkFbh-Iwtt8veoG=s94-rw" alt="Zydex applications (Android)">
+                        <div class="text-purple-400 opacity-30">
+                            <i data-lucide="scan-line" style="width:80px;height:80px;"></i>
+                        </div>
                     </div>
-                    <div class="p-6 flex-grow flex flex-col">
-                        <div class="flex items-center justify-between mb-2">
-                            <h3 class="text-xl font-bold text-white">Zydex applications (Android)</h3>
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-xl font-bold text-white">Receipt Scanning System</h3>
+                            <span class="ml-2 flex-shrink-0 px-2 py-0.5 bg-purple-500/10 border border-purple-500/30 rounded text-purple-400 text-xs">Python · AI/ML</span>
                         </div>
-                        <p class="text-gray-400 text-sm mb-4">I work on all Zydex applications at Maahi IT. Built a background GPS service tracking system for field employees that calculates actual daily travel distances. Managed thread pools and broadcast receivers to run location updates in the background with minimal impact on device battery life. </p>
-                        <div class="mt-auto">
-                            <a href="https://play.google.com/store/apps/dev?id=7608500595013710517" target="_blank" class="inline-flex items-center text-orange-400 hover:underline">
-                                View Full Play Store <i data-lucide="external-link" class="w-4 h-4 ml-2"></i>
-                            </a>
-                        </div>
+                        <p class="text-gray-400 text-sm mb-4 flex-1">FastAPI REST service with a 5-step OpenCV preprocessing pipeline feeding a Donut transformer for structured JSON extraction from receipts. Active learning loop automatically retrains the model from user corrections — improving accuracy over time.</p>
+                        <span class="inline-flex items-center text-purple-400 text-sm">Personal Project</span>
                     </div>
                 </div>
 
