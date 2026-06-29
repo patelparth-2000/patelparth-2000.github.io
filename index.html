@@ -401,50 +401,65 @@
 
         <!-- Skills Section -->
         <section id="skills" class="py-24 fade-in-section">
-            <h2 class="text-3xl sm:text-4xl font-bold text-center text-white mb-16">Technical Arsenal</h2>
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-white mb-16">Technical Skills</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-               <!-- Mobile Card -->
-                <div class="bg-gray-900 p-6 rounded-2xl border border-gray-800">
-                    <h3 class="text-cyan-400 font-bold mb-4 flex items-center"><i data-lucide="smartphone" class="mr-2"></i> Mobile</h3>
+
+                <!-- Mobile -->
+                <div class="bg-gray-900 p-6 rounded-2xl border border-gray-800 hover:border-cyan-500/40 transition-colors">
+                    <h3 class="text-cyan-400 font-bold mb-4 flex items-center gap-2"><i data-lucide="smartphone"></i> Mobile</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">Flutter</span>
                         <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">Android (Java)</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">Kotlin</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">Flutter</span>
                         <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">Dart</span>
-                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">XML</span>
-                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">GetX/Bloc</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">XML Layouts</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">Jetpack Compose</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">GetX / BLoC</span>
                     </div>
                 </div>
-                <!-- Tools & Cloud -->
-                <div class="bg-gray-900 p-6 rounded-2xl border border-gray-800">
-                    <h3 class="text-emerald-400 font-bold mb-4 flex items-center"><i data-lucide="cloud" class="mr-2"></i> Cloud & Tools</h3>
+
+                <!-- Architecture & Jetpack -->
+                <div class="bg-gray-900 p-6 rounded-2xl border border-gray-800 hover:border-blue-500/40 transition-colors">
+                    <h3 class="text-blue-400 font-bold mb-4 flex items-center gap-2"><i data-lucide="layers"></i> Architecture</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">Firebase</span>
-                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">Git/GitHub</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">MVVM</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">Clean Architecture</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">ViewModel / LiveData</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">Room (SQLite)</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">Coroutines</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">Background Services</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">BroadcastReceiver</span>
+                    </div>
+                </div>
+
+                <!-- APIs, Cloud & Tools -->
+                <div class="bg-gray-900 p-6 rounded-2xl border border-gray-800 hover:border-emerald-500/40 transition-colors">
+                    <h3 class="text-emerald-400 font-bold mb-4 flex items-center gap-2"><i data-lucide="cloud"></i> APIs & Cloud</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">REST APIs</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">Retrofit / OkHttp</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">GraphQL</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">Firebase (FCM / Auth)</span>
                         <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">Google Maps API</span>
                         <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">Postman</span>
-                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">Google Console</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">Play Console</span>
                     </div>
                 </div>
-                <!-- Core Development -->
-                <div class="bg-gray-900 p-6 rounded-2xl border border-gray-800">
-                    <h3 class="text-blue-400 font-bold mb-4 flex items-center"><i data-lucide="layers" class="mr-2"></i> Core</h3>
+
+                <!-- Tooling & Data -->
+                <div class="bg-gray-900 p-6 rounded-2xl border border-gray-800 hover:border-orange-500/40 transition-colors">
+                    <h3 class="text-orange-400 font-bold mb-4 flex items-center gap-2"><i data-lucide="wrench"></i> Tooling & Data</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">MVVM/MVC</span>
-                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">REST APIs</span>
-                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">OOP</span>
-                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">Architecture Design</span>
-                    </div>
-                </div>
-                <!-- Backend & Web -->
-                <div class="bg-gray-900 p-6 rounded-2xl border border-gray-800">
-                    <h3 class="text-orange-400 font-bold mb-4 flex items-center"><i data-lucide="database" class="mr-2"></i> Data & Web</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">SQLite</span>
-                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">MySQL</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">Git / GitHub</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">Android Studio</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">Gradle</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">SQLite / MySQL</span>
                         <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">MongoDB</span>
-                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">PHP/Node.js</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">Python / FastAPI</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-lg text-sm">Unit Testing / JUnit</span>
                     </div>
                 </div>
+
             </div>
         </section>
 
